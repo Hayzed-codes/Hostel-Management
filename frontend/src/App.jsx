@@ -1,11 +1,12 @@
-import { useState } from "react";
+import AdminReg from "./Component/Register/AdminReg";
+
 
 function App() {
 
   return (
     <>
       <div>
-
+        <AdminReg />
       </div>
     </>
   );
