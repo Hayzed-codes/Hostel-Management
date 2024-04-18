@@ -61,7 +61,7 @@ const Header = () => {
           </button>
 
           <div>
-            <img src="../../assets/nav-image.png" alt="nav-image" />
+            <img src="/src/assets/nav-image.png" alt="nav-image" />
           </div>
         </div>
       </nav>
