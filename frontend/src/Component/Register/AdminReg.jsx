@@ -51,6 +51,8 @@ const AdminReg = () => {
             required
             />
           </div>
+
+          <button className="--btn">Create an account</button>
         </form>
       </div>
     </div>
