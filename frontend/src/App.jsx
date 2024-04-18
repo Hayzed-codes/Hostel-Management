@@ -2,6 +2,7 @@ import AdminReg from "./Component/Register/AdminReg";
 import { Route, Routes } from "react-router-dom";
 import Login from "./Component/Register/Login";
 import StudentReg from "./Component/Register/StudentReg";
+import Header from "./Component/Header/Header";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
           <Route path="/" element={<AdminReg />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/student-reg" element={<StudentReg />}/>
-          
+          <Route path="/header" element={<Header />} />
         </Routes>
       </div>
     </>
