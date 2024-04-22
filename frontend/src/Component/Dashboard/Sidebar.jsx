@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     const dashboardLinks = [
@@ -21,7 +22,11 @@ const Sidebar = () => {
     <div className='--flex-start'>
       <div className="left">
         {dashboardLinks.map(({title, url}, i) => (
-            
+            <div  className='--flex-center --dir-column' key={i}>
+                <Link to={url}>
+                    {title}
+                </Link>
+            </div>
         ))}
       </div>
     </div>
