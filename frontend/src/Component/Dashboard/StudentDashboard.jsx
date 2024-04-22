@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from './Sidebar'
+import './StudentDashboard.css'
 
 const StudentDashboard = () => {
     

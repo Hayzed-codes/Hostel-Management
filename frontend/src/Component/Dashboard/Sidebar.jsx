@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
+    const Sidebar = () => {
+      const [activeIndex, setActiveIndex] = useState(0);
+    
+      const handleLinkClick = (index) => {
+        setActiveIndex(index);
+      };
+    }
+    
     const dashboardLinks = [
         { title: "Students", url: "/studentdash" },
         { title: "Rooms", url: "/room" },
@@ -9,13 +17,6 @@ const Sidebar = () => {
         { title: "Reports", url: "/report" },
       ];
 
-// const Sidebar = () => {
-//   const [activeIndex, setActiveIndex] = useState(0);
-
-//   const handleLinkClick = (index) => {
-//     setActiveIndex(index);
-//   };
-// }
     
   return (
     

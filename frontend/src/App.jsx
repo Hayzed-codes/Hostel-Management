@@ -1,9 +1,10 @@
-import AdminReg from "./Component/Register/AdminReg";
 import { Route, Routes } from "react-router-dom";
+import AdminReg from "./Component/Register/AdminReg";
 import Login from "./Component/Register/Login";
 import StudentReg from "./Component/Register/StudentReg";
 import HomeDash from "./Component/Dashboard/HomeDash";
 import Layout from "./Component/Layout/Layout";
+import StudentDashboard from "./Component/Dashboard/StudentDashboard";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               </Layout>
             }
           />
+          <Route path="/studentdash" element={<StudentDashboard />}/>
         </Routes>
       </div>
     </>
