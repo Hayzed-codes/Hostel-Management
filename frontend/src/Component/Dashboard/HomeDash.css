@@ -1,3 +1,13 @@
+.__flex {
+    display: flex;
+    justify-content: center;
+}
+
+.__users{
+    display: flex;
+    justify-content: center;
+}
+
 ._homeDashCon {
     flex-direction: column;
     margin: 20px 160px 0 160px;
@@ -30,11 +40,6 @@
     text-align: left;
 }
 
-.__flex {
-    display: flex;
-    justify-content: center;
-}
-
 .__boards{
     width: var( --full-width);
     justify-content: space-around;
@@ -58,14 +63,14 @@
     font-family: var(--font-family);
     font-size: 24px;
     font-weight: 700;
-    color: #121417;
+    color: var(--text-primary);
     text-align: center;
     line-height: 30px;
     letter-spacing: -0.6px;
 }
 
 .__boardDetails{
-    color: #637587;
+    color:var(--text-fade);
     font-size: 14px;
     font-family: var(--font-family);
     font-weight: 400;
@@ -73,3 +78,138 @@
     letter-spacing: 0px;
     text-align: center;
 }
+
+.__firstCon{
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    width: var(--full-width);
+}
+
+.__title{
+    width: var(--full-width);
+    font-family: var(--font-family);
+    font-size: 22px;
+    font-weight: 700;
+    text-align: left;
+    color: var(--text-primary);
+    line-height: 28px;
+    letter-spacing: -0.33px;
+
+
+}
+
+.__users{
+    width: var(--full-width);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+
+.__firstUserPic{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+.__userData{
+    display: flex;
+    justify-content: space-between;
+    width: var(--full-width);
+    align-items: center;
+}
+
+.__userData > div > h5{
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: var(--text-primary);
+}
+
+.__userData > div >p{
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: left;
+    color:var(--text-fade);
+}
+
+.__userData > p{
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: var(--text-fade);
+}
+
+.__lastCon{
+    width: var(--full-width);
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+}
+
+
+.__lastCon >div {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 12px;
+}
+
+.__lastCon >div > button{
+    width: 144px;
+    height: 40px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0 16px 0 16px;
+}
+
+.__addBtn{
+    width: 118.94px;
+    background: var(--primary-btn-bg);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    color: #fff;
+}
+
+.__addBtn:hover {
+    background: #f5f2f2;
+    color: var(--text-primary);
+    transition-duration: 600ms;
+}
+
+.__attendBtn{
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0.20999999344348907px;
+    color: var(--text-primary);
+}
+
+.__attendBtn:hover {
+    background: var(--primary-btn-bg);
+    color: #fff;
+    transition-duration: 600ms;
+}
+
+
+
+
+
+
+
+
