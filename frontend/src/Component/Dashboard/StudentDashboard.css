@@ -3,7 +3,7 @@
   width: 307px;
   max-width: 300px;
   height: 760px;
-  background-color: #f0f2f54e;
+  background-color: #fff;
 }
 
 .left > div {
@@ -18,3 +18,9 @@
   width: 100%;
   padding: 8px 12px;
 }
+
+.active-link {
+    background: #f0f2f5;
+    border-radius: 12px;
+  }
+  
