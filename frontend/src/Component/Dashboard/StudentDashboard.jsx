@@ -42,13 +42,21 @@ const StudentDashboard = () => {
         
 
         const handleSearchChange = (e) => {
+            // Get the search term from the input field and convert it to lowercase
             const term = e.target.value.toLowerCase()
+             // Filter the studentsData based on the search term
             const filtered = studentsData.filter(
                 (student) =>
+                 // Check if the student's name or email contains the search term
                 student.name.toLowerCase().includes(term) ||
                 student.email.toLowerCase().includes(term)
             );
+            // Set the filtered data to the state
             setFilteredData(filtered)
+        }
+
+        const handleDelete = (studentId) => {
+
         }
 
     
@@ -57,7 +65,6 @@ const StudentDashboard = () => {
         <Sidebar />
       <h1>Student</h1>
 
-      {/* {studentsData.map(({id, name, email, idNumber, gender, age, nationality}, i) => )} */}
     </div>
   )
 }
