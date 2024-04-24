@@ -3,6 +3,7 @@ import RoomTable from "./RoomTable";
 import Sidebar from "./Sidebar";
 
 
+
 const initialRooms = [
   {
     roomNumber: "101",
@@ -43,7 +44,12 @@ const Rooms = () => {
     );
     setFilteredData(filtered);
   };
-  const handleAddRoom = () => {};
+  const handleAddRoom = (newRoomData) => {
+
+    setRooms([...rooms, newRoomData]);
+    setFilteredData([...rooms, newRoomData])
+
+  };
 
   const handleUpdateRoom = (roomNumber, newStatus) => {
     const updatedRooms = rooms.map((room) =>

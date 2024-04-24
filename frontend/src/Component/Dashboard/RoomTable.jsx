@@ -3,10 +3,12 @@ import "./StudentDashboard.css";
 import { RiDeleteBin6Line, RiFilePaperLine } from "react-icons/ri";
 import { FaPen } from "react-icons/fa";
 import EditStatusModal from "./EditStatusModal";
+import AddRoomModal from "./AddRoomModal";
 
 const RoomTable = ({ rooms, onAddRoom, onUpdateRoom, onDeleteRoom }) => {
   const [showModal, setShowModal] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const [showAddModal, setShowAddModal] = useState(false);
 
   const openModal = (room) => {
     setSelectedRoom(room);
@@ -16,6 +18,10 @@ const RoomTable = ({ rooms, onAddRoom, onUpdateRoom, onDeleteRoom }) => {
   const closeModal = () => {
     setShowModal(false);
   };
+
+  const closeAddModal = () => {
+    setShowAddModal(false)
+  }
 
   return (
     <div className="room-table-container">
@@ -57,9 +63,13 @@ const RoomTable = ({ rooms, onAddRoom, onUpdateRoom, onDeleteRoom }) => {
         </table>
       </div>
       <div className="right">
-        <button onClick={onAddRoom} className="btn-secondary">
+        <button onClick={() =>  setShowAddModal(true)} className="btn-secondary">
           Add New Room
         </button>
+
+        {showAddModal &&(
+          <AddRoomModal onAddRoom={onAddRoom} onClose={closeAddModal}/>
+        )}
 
         {showModal && (
           <EditStatusModal

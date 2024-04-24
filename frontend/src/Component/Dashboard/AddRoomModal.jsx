@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Dashboard.css";
+import "./StudentDashboard.css";
 
 const AddRoomModal = ({ onAddRoom, onClose }) => {
   const [newRoom, setNewRoom] = useState({
@@ -95,4 +95,4 @@ const AddRoomModal = ({ onAddRoom, onClose }) => {
   );
 };
 
-export default AddRoomModal;
+export default AddRoomModal;
