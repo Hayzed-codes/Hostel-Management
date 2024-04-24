@@ -29,4 +29,4 @@ const EditRoleModal = ({ user, onUpdateRole, onClose }) => {
   );
 };
 
-export default EditRoleModal;
+export default EditRoleModal;
