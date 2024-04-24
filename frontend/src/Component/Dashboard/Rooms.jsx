@@ -1,5 +1,7 @@
 import { useState } from "react";
+import RoomTable from "./RoomTable";
 import Sidebar from "./Sidebar";
+
 
 const initialRooms = [
   {
@@ -26,9 +28,9 @@ const initialRooms = [
 ];
 
 const Rooms = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [rooms, setRooms] = useState(initialRooms);
-  const [filteredData, setFilteredData] = useState(initialRooms);
+  const [searchTerm, setSearchTerm] = useState(""); // Input Handler
+  const [rooms, setRooms] = useState(initialRooms); // Our data state
+  const [filteredData, setFilteredData] = useState(initialRooms); // Filter your data according to our input
 
   const handleSearchChange = (e) => {
     const term = e.target.value.toLowerCase();
@@ -58,7 +60,7 @@ const Rooms = () => {
   };
 
   return (
-    <div className="container --flex-start">
+    <div className="container --flex-start --gap" >
       <Sidebar />
       <div>
         <h1>Hostel Room Listing</h1>
