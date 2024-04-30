@@ -16,6 +16,11 @@ header {
   font-weight: 700;
 }
 
+.logo a > svg {
+  width: 30px;
+  height: 30px;
+}
+
 .navItems {
   gap: 36px;
   margin-right: -13em;
@@ -25,8 +30,49 @@ header {
   gap: 16px;
 }
 
-.navToggle {
+.sidebar-toggle-icon {
   font-size: 40px;
   cursor: pointer;
-  /* display: none; */
+  display: none;
+}
+
+.mobile-sidebar {
+  display: block;
+  position: fixed;
+  left: 0;
+  background: white;
+  z-index: 1;
+}
+
+.--sidebar-close {
+  padding-top: 20px;
+  padding-right: 30px;
+}
+
+.sidebar-toggle-icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .sidebar-toggle-icon {
+    display: block;
+  }
+
+  .logo a > span {
+    display: none;
+  }
+
+  .logo a > svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .btn__wrapper button:nth-child(odd) {
+    display: none;
+  }
+
+  .navItems{
+    display: none;
+  }
 }

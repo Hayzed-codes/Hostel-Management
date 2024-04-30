@@ -18,16 +18,19 @@ const Header = () => {
     <>
       {navToggle && (
         <div className="mobile-sidebar">
-          <HeaderSideNav />
+          <HeaderSideNav items={items} setNavToggle={setNavToggle} />
         </div>
       )}
       <header>
         <nav className="navigation --flex-between">
-          <div className="navToggle" onClick={() => setNavToggle(!navToggle)}>
-            {navToggle ? <FaTimes /> : <FaBars />}
-          </div>
           <div className="logo">
             <Link to="/homedash">
+              <div
+                className="sidebar-toggle-icon"
+                onClick={() => setNavToggle(!navToggle)}
+              >
+                {navToggle ? <FaTimes /> : <FaBars />}
+              </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -79,7 +82,6 @@ const Header = () => {
           </div>
         </nav>
       </header>
-
     </>
   );
 };
