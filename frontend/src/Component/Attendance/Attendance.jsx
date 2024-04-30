@@ -109,7 +109,7 @@ const Attendance = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const handleToggleClick = (index) => {
-    setActiveIndex(index === activeIndex) ? -1 : index;
+    setActiveIndex(index === activeIndex ? -1 : index);
   };
 
   const studentData = [

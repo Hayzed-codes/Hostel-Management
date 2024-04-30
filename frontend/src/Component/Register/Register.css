@@ -1,3 +1,41 @@
+@media (min-width: 1200px) and (max-width: 1919px) {
+ 
+
+  .form-container {
+    width: 90%;
+    max-width: 55rem;
+    padding: 20px 40px;
+ 
+    font-size: 25px;
+  }
+
+  .title {
+    font-size: 45px;
+  }
+
+  .form {
+    gap: 22px;
+  }
+
+  .input {
+    height: 60px;
+    font-size: 22px;
+  }
+
+  label {
+    font-size: 25px;
+  }
+
+  .--btn {
+    height: 60px;
+    font-size: 25px;
+  }
+
+  .form-container p > a {
+    font-size: 25px;
+  }
+}
+
 .form__ {
   position: relative;
   display: flex;
@@ -45,6 +83,7 @@
   background: #f0f2f5;
   margin-top: 10px;
   font-size: 12px;
+  border-radius: 10px;
 }
 
 label {
@@ -70,4 +109,152 @@ label {
 .--btn:hover {
   transition-duration: 600ms;
   transform: translateY(-2px);
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .form-container {
+    width: 70%;
+    max-width: 35rem;
+    padding: 20px 30px;
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .form {
+    gap: 18px;
+  }
+
+  .input {
+    height: 40px;
+    font-size: 20px;
+  }
+
+  label {
+    font-size: 20px;
+  }
+
+  .--btn {
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .form-container p > a {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+  .form-container {
+    width: 70%;
+    max-width: 30rem;
+    padding: 20px 30px;
+
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 25px;
+    font-weight: 600;
+  }
+
+  .form {
+    gap: 14px;
+    padding: 25px 0;
+  }
+
+  .input {
+    height: 35px;
+    font-size: 16px;
+  }
+
+  label {
+    font-size: 18px;
+  }
+
+  .--btn {
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .form-container p > a {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .form-container {
+    width: 100%;
+    max-width: 30rem;
+    padding: 20px 10px;
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .form {
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .input {
+    height: 30px;
+    font-size: 12px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  .--btn {
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .form-container p > a {
+    font-size: 14px;
+  }
+}
+
+@media (min-width:290px) and (max-width: 480px) {
+
+  .form-container {
+    width: 100%;
+    padding: 20px 10px;
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .form {
+    gap: 5px;
+    padding: 10px 0;
+  }
+
+  .input {
+    height: 25px;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .--btn {
+    height: 20px;
+    font-size: 12px;
+    padding: 10px;
+    margin-top: 1rem;
+  }
 }
