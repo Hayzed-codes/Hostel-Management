@@ -2,8 +2,6 @@ import { useState } from "react";
 import RoomTable from "./RoomTable";
 import Sidebar from "./Sidebar";
 
-
-
 const initialRooms = [
   {
     roomNumber: "101",
@@ -45,10 +43,8 @@ const Rooms = () => {
     setFilteredData(filtered);
   };
   const handleAddRoom = (newRoomData) => {
-
     setRooms([...rooms, newRoomData]);
-    setFilteredData([...rooms, newRoomData])
-
+    setFilteredData([...rooms, newRoomData]);
   };
 
   const handleUpdateRoom = (roomNumber, newStatus) => {
@@ -66,23 +62,34 @@ const Rooms = () => {
   };
 
   return (
-    <div className="container --flex-start --gap" >
-      <Sidebar />
-      <div>
-        <h1>Hostel Room Listing</h1>
-        <input
-          placeholder="Search by room number, status, or location"
-          type="text"
-          className="search"
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
-        <RoomTable
-          rooms={filteredData}
-          onAddRoom={handleAddRoom}
-          onUpdateRoom={handleUpdateRoom}
-          onDeleteRoom={handleDeleteRoom}
-        />
+    <div className="--flex-justify-between">
+      <div className="desktop-side-nav">
+        <Sidebar />
+      </div>
+
+      <div className="--flex-dir-column --overflow-y-auto --flex-1 overflow-x-hidden">
+        <main className="--flex-justify-center w-full">
+          <div className="right dash-main">
+
+            <div>
+            <h1>Hostel Room Listing</h1>
+            </div>
+
+            <input
+              placeholder="Search by room number, status, or location"
+              type="text"
+              className="search"
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
+            <RoomTable
+              rooms={filteredData}
+              onAddRoom={handleAddRoom}
+              onUpdateRoom={handleUpdateRoom}
+              onDeleteRoom={handleDeleteRoom}
+            />
+          </div>
+        </main>
       </div>
     </div>
   );

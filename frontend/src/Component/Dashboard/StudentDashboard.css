@@ -25,8 +25,12 @@
 }
 
 .right {
-  width: 921px;
+  /* width: 921px; */
   padding: 16px;
+}
+
+.dash-main {
+  width: 90%;
 }
 
 .right p:nth-child(1) {
@@ -108,7 +112,7 @@
 }
 
 tbody > tr:hover {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .right button {
@@ -126,4 +130,31 @@ tbody > tr:hover {
 
 ._noBg {
   background: transparent;
+}
+
+.sidebar-toggle-iconB{
+  font-size: 50px;
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-side-nav {
+  display: block;
+  position: fixed;
+  left: 0;
+  background: red;
+}
+
+@media (max-width: 991px) {
+  .sidebar-toggle-iconB {
+    display: block;
+  }
+
+  .dash-main {
+    width: 100%;
+  }
+
+  .desktop-side-nav{
+    display: none;
+  }
 }

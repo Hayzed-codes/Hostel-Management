@@ -6,22 +6,28 @@ header {
 
 .logo a {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 16px;
 }
 
 .logo a > span {
   color: #121417;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
+  line-height: 22.5px;
+  letter-spacing: -0.27px;
+  font-family: var(--font-family);
 }
 
 .logo a > svg {
-  width: 30px;
-  height: 30px;
+  width: 16px;
+  height: 16px;
 }
 
 .navItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 36px;
   margin-right: -13em;
 }
