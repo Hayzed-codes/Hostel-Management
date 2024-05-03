@@ -115,9 +115,13 @@ tbody > tr:hover {
   cursor: pointer;
 }
 
+.room-table {
+  max-width: 1600px;
+}
+
 .right button {
   margin-top: 1.2em;
-  width: 300px;
+  /* width: 300px; */
   height: 40px;
   padding: 0px 16px;
   color: #121417;
@@ -158,3 +162,5 @@ tbody > tr:hover {
     display: none;
   }
 }
+
+

@@ -3,8 +3,12 @@ header {
   padding: 12px 40px;
 }
 
+.logo {
+  display: flex;
+  gap: 10px;
+}
 
-.logo a {
+.logo > a {
   display: flex;
   /* align-items: center; */
   gap: 16px;
@@ -29,7 +33,16 @@ header {
   align-items: center;
   justify-content: center;
   gap: 36px;
-  margin-right: -13em;
+  /* margin-right: -13em; */
+}
+
+.navItems > div a{
+  color: #121417;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
 }
 
 .btn__wrapper {
@@ -81,4 +94,6 @@ header {
   .navItems{
     display: none;
   }
+
+  
 }

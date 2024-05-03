@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import HeaderSideNav from "./HeaderSideNav";
 
+
 const items = [
   { title: "Dashboard", url: "/homedash" },
   { title: "Students", url: "/studentdash" },
@@ -24,13 +25,18 @@ const Header = () => {
       <header>
         <nav className="navigation --flex-between">
           <div className="logo">
-            <Link to="/homedash">
-              <div
+            {navToggle ? (
+              <FaTimes
                 className="sidebar-toggle-icon"
-                onClick={() => setNavToggle(!navToggle)}
-              >
-                {navToggle ? <FaTimes /> : <FaBars />}
-              </div>
+                onClick={() => setNavToggle(false)}
+              />
+            ) : (
+              <FaBars
+                className="sidebar-toggle-icon"
+                onClick={() => setNavToggle(true)}
+              />
+            )}
+            <Link to="/homedash">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -49,7 +55,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="navItems --flex-center">
+          <div className="navItems ">
             {items.map(({ title, url, i }) => (
               <div key={i}>
                 <Link to={url}>{title}</Link>
