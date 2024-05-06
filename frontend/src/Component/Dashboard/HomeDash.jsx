@@ -165,7 +165,7 @@ const HomeDash = () => {
       <div className="__lastCon">
         <h3 className="__lastTitle">Quick Actions</h3>
 
-        <div>
+        <div className="__homeBtn">
           <button className="__addBtn">
             <Link to="/student-reg">Add a student</Link>
           </button>
