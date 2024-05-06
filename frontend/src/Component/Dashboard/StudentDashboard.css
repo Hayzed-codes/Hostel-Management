@@ -140,9 +140,11 @@ tbody > tr:hover {
   font-size: 50px;
   cursor: pointer;
   display: none;
+  z-index: 1;
 }
 
 .mobile-side-nav {
+  background: white;
   display: block;
   position: fixed;
   left: 0;
