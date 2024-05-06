@@ -35,7 +35,6 @@ const Attendance = () => {
       "Thur",
       "Fri",
       "Sat",
-      "Sun",
     ];
 
     const firstDay = new Date(year, month - 1, 1).getDay();
