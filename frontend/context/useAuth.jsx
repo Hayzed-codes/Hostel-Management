@@ -8,7 +8,7 @@ const useAuthRedirect = () => {
 
     useEffect(() => {
         if (!user) {
-            navigate("login")
+            navigate("/login")
         }
     }, [user, navigate])
 };

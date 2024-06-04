@@ -2,9 +2,12 @@ import React, { useContext } from "react";
 import "./HomeDash.css";
 import { blacky, lady, lady2, tallest } from "../../assets";
 import { Link } from "react-router-dom";
+import useAuthRedirect from "../../../context/useAuth"
+import { UserContext } from "../../../context/userContext";
 
 const HomeDash = () => {
-
+  useAuthRedirect()
+  const {user} = useContext(UserContext)
   const activities = [
     {
       userPic: lady,
@@ -31,11 +34,12 @@ const HomeDash = () => {
       time: "7 mins ago",
     },
   ];
+  
 
   return (
     <div className="--flex-center _homeDashCon">
       <div className="__paraCon">
-        <h1 className="__paraHeader">Welcome back, Hayzed!</h1>
+        <h1 className="__paraHeader">Welcome back, {user.fullname}!</h1>
       </div>
 
       <div className="__secondCon">
