@@ -255,5 +255,5 @@ module.exports = {
   updateStudentProfile,
   changeStudentRoom,
   updateCheckInStatus,
-  deleteStudent,
+  deleteStudent
 };

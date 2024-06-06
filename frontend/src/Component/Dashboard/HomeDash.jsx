@@ -7,7 +7,8 @@ import { UserContext } from "../../../context/userContext";
 
 const HomeDash = () => {
   useAuthRedirect()
-  const {user} = useContext(UserContext)
+  const { user } = useContext(UserContext);
+
   const activities = [
     {
       userPic: lady,

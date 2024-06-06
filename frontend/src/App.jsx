@@ -9,8 +9,6 @@ import Rooms from "./Component/Dashboard/Rooms";
 import AdminPreview from "./Component/AdminPreview/AdminPreview";
 import Attendance from "./Component/Attendance/Attendance";
 
-
-
 function App() {
   // const [loading, setLoading] = useState(true);
 
@@ -29,14 +27,7 @@ function App() {
 
           <Route path="/login" element={<Login />} />
 
-          <Route
-            path="/student-reg"
-            element={
-              <Layout>
-                <StudentReg />
-              </Layout>
-            }
-          />
+          <Route path="/student-reg" element={<StudentReg />} />
 
           <Route
             path="/homedash"

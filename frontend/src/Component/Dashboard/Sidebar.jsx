@@ -9,9 +9,9 @@ const Sidebar = () => {
   };
 
   const dashboardLinks = [
+    { title: "Home", url: "/homedash" },
     { title: "Students", url: "/studentdash" },
     { title: "Rooms", url: "/room" },
-    { title: "RoomType", url: "/room-type" },
     { title: "Reports", url: "/report" },
   ];
 
