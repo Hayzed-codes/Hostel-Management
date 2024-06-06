@@ -73,17 +73,17 @@ const studentSchema = new mongoose.Schema({
 );
 
 
-studentSchema.methods.checkIn = function () {
-    this.checkedIn = true;
-    this.checkedInTime = new Date();
-    this.checkedOutTime = null;
-}
+// studentSchema.methods.checkIn = function () {
+//     this.checkedIn = true;
+//     this.checkedInTime = new Date();
+//     this.checkedOutTime = null;
+// }
 
-studentSchema.methods.checkOut = function () {
-    this.checkedIn = false;
-    this.checkedOutTime = new Date();
-    this.checkedInTime = null;
-};
+// studentSchema.methods.checkOut = function () {
+//     this.checkedIn = false;
+//     this.checkedOutTime = new Date();
+//     this.checkedInTime = null;
+// };
 
 
 const Student = mongoose.model("Student", studentSchema)

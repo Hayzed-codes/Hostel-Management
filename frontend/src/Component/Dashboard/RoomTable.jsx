@@ -12,13 +12,13 @@ const RoomTable = ({ rooms, onAddRoom, onUpdateRoom, onDeleteRoom }) => {
 
 
   const handleEditClick = (room) => {
-    selectedRoom(room);
+    setSelectedRoom(room);
     setIsEditModalOpen(true);
   };
 
   const handleEditModalClose = () => {
     setIsEditModalOpen(false);
-    selectedRoom(null);
+    setSelectedRoom(null);
   };
 
   const handleAddRoomOpen = () => {
@@ -50,10 +50,10 @@ const RoomTable = ({ rooms, onAddRoom, onUpdateRoom, onDeleteRoom }) => {
             {rooms.map((room, index) => (
               <tr key={index} className="table__row">
                 <td className="same_class">{room.roomNumber}</td>
-                <td className="same_class">{room.capacity}</td>
-                <td className="same_class">{room.occupancy}</td>
-                <td className="same_class">{room.location}</td>
-                <td className="same_class">{room.status}</td>
+                <td className="same_class">{room.roomCapacity}</td>
+                <td className="same_class">{room.roomOccupancy}</td>
+                <td className="same_class">{room.roomLocation}</td>
+                <td className="same_class">{room.roomStatus}</td>
                 <td className="same_class ">
                   <button onClick={() => handleEditClick(room)} className="_noBg">
                     <FaPen size={25} color="blue" />
