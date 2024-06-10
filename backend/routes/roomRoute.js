@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("/create-room", createNewRoom)
 router.get("/", getAllRooms)
-router.get("/:roomId", getRoom)
+router.get("/get-single-room/:roomId", getRoom)
 router.patch("/:roomId", updateRoom)
 router.delete("/:roomId", deleteRoom)
 

@@ -38,6 +38,7 @@ const format = {
   SS: formatDate(date.getSeconds())
 };
 
+
 const format24Hour = ({ dd, mm, yyyy, HH, MM, SS }) => {
   return `${mm}/${dd}/${yyyy} ${HH}:${MM}:${SS}`
 }
@@ -203,7 +204,7 @@ const changeStudentRoom = asyncHandler(async (req, res) => {
 });
 
 const updateCheckInStatus = asyncHandler(async (req, res) => {
-  const { studentId, action } = req.body;
+  const { studentId, action, roomNumber } = req.body;
 
   const student = await Student.findById(studentId);
 
@@ -221,27 +222,27 @@ const updateCheckInStatus = asyncHandler(async (req, res) => {
     return res.status(400).json({msg: "Invalid action"})
   }
 
-  await Room.updateMany(
-    { roomOccupancy: studentId },
-    {$pull: {roomOccupancy: studentId}}
-  )
-  await student.save()
+  const room = await Room.findOne({ roomNumber })
+  if (!room) {
+    return res.status(400).json({msg: "Room not found"})
+  };
 
-  res.status(200).json({msg: `Student ${action} successfully`, student})
+  if(action === "checkIn"){
+    room.roomOccupancy.push(studentId)
+  }
+
+  if(action === "checkOut"){
+    room.roomOccupancy.pull(studentId)
+  }
+
+  await room.save();
+  await student.save();
+
+  res.status(200).json({msg: `Student ${action} successfully`, student, room })
 });
 
-// const deleteStudent = asyncHandler(async (req, res) => {
-//   const student = await Student.findById(req.params.id);
-//   if (!student) {
-//     res.status(404);
-//     throw new Error("Student not found in database");
-//   }
 
-//   await student.deleteOne();
-//   res.status(200).json({
-//     message: "Student deleted successfully!",
-//   });
-// });
+
 
 const deleteStudent = asyncHandler(async (req, res) => {
   const studentId = req.params._id

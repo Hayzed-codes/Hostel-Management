@@ -237,12 +237,12 @@ const StudentDashboard = () => {
 
             <button
               onClick={() => handleModalSelect("UpdateCheckIn")}
-              className="three"
+              
             >
               Update Check-In
             </button>
 
-            <button onClick={() => handleModalSelect("Close")}>Close</button>
+            <button onClick={() => handleModalClose("Close")} className="three">Close</button>
           </div>
         </div>
       )}
