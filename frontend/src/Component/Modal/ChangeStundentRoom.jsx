@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const ChangeStundentRoom = ({student, onClose}) => {
-  const [newRoom, setNewRoom] = useState("");
+  const [newRoomNum, setNewRoom] = useState("");
 
   const handleChange = (e) => {
     setNewRoom(e.target.value);
@@ -12,9 +12,9 @@ const ChangeStundentRoom = ({student, onClose}) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3500/change-room", {
+      const response = await axios.post("http://localhost:3500/student/change-room", {
         studentId: student._id,
-        newRoom,
+        newRoomNum,
       });
     } catch (error) {
       console.error("Error changing room", error);
@@ -29,7 +29,7 @@ const ChangeStundentRoom = ({student, onClose}) => {
           <div>
             <label htmlFor="">New Room Number</label>
 
-            <input type="text" value={newRoom} onChange={handleChange} />
+            <input type="text" value={newRoomNum} onChange={handleChange} />
           </div>
 
           <button>Change Room</button>

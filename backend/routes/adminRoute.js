@@ -6,10 +6,10 @@ const {protect} = require("../middleware/authMiddleware")
 router.post("/register", register)
 router.post("/login", login)
 
-router.get("/:adminId",protect, getAdmin)
-router.delete("/:adminId",protect, deleteAdmin)
+router.get("/:adminId", getAdmin)
+router.delete("/:adminId", deleteAdmin)
 router.get("/", getAdmins)
-router.put("/:adminId",protect, updateAdmin)
+router.patch("/:adminId", updateAdmin)
 router.post("/logout", logoutAdmin)
 
 
