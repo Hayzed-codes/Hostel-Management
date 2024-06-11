@@ -174,22 +174,24 @@ const getAdmins = asyncHandler(async (req, res) => {
 });
 
 const updateAdmin = asyncHandler(async (req, res) => {
-  const { adminId } = req.params;
+  const adminId = req.params.adminId
+  const {role} =  req.body
 
-  // Find the admin by ID, excluding the password field
-  const admin = await Admin.findById(adminId).select("-password");
+  try {
+    const admin = await Admin.findById(adminId);
 
-  if (admin) {
-    // Update the admin fields if new values are provided in req.body
-    if (req.body.fullname) admin.fullname = req.body.fullname;
-    if (req.body.email) admin.email = req.body.email;
-    if (req.body.role) admin.role = req.body.role;
+    if (!admin) {
+      return res.status(400).json({ msg: "Admin not found" });
+    }
 
-    const result = await admin.save();
+    admin.role = role;
 
-    return res.status(200).json(result); // Send the updated admin as JSON response
-  } else {
-    return res.status(404).json({ message: "Admin not found" }); // Send a 404 response if admin not found
+    await admin.save();
+
+    res.status(200).json(admin)
+  } catch (error) {
+    console.error("error updating admin", error);
+    res.status(500).json({msg: "Internal server error"})
   }
 });
 
@@ -197,17 +199,21 @@ const updateAdmin = asyncHandler(async (req, res) => {
 // const updateAdmin = asyncHandler(async (req, res) => {
 //   const { adminId } = req.params;
 
-//   const admin = await Admin.findById(adminId).select("-password");
+ // Find the admin by ID, excluding the password field
+//  const admin = await Admin.findById(adminId).select("-password");
 
-//   if (admin) {
-//     if (req.body?.fullname) admin.fullname = req.body.fullname;
-//     if (req.body?.email) admin.email = req.body.email;
-//     if (req.body?.role) admin.role = req.body.role;
+//  if (admin) {
+//    // Update the admin fields if new values are provided in req.body
+//    if (req.body.fullname) admin.fullname = req.body.fullname;
+//    if (req.body.email) admin.email = req.body.email;
+//    if (req.body.role) admin.role = req.body.role;
 
-//     const result = await admin.save();
+//    const result = await admin.save();
 
-//     res.json(result);
-//   }
+//    return res.status(200).json(result); // Send the updated admin as JSON response
+//  } else {
+//    return res.status(404).json({ message: "Admin not found" }); // Send a 404 response if admin not found
+//  }
 // });
 
 const logoutAdmin = asyncHandler(async (req, res) => {

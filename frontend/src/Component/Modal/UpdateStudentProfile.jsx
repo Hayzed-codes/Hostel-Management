@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const UpdateStudentProfile = ({ student, onClose }) => {
+const  UpdateStudentProfile = ({ student, onClose }) => {
   const [formData, setFormData] = useState({
     name: student.name,
     age: student.age,
     nationality: student.nationality,
     g_name: student.guardian.guardianName,
     g_email: student.guardian.guardianEmail,
-  });
+  });  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
