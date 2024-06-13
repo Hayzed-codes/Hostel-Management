@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler");
-const Student = require("../models/StudentModel");
+const Student = require("../models/studentModel");
 const Room = require("../models/roomModel");
 const { generateUniqueId } = require("../utils/generatUniqueId");
 
