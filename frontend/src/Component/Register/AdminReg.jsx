@@ -73,7 +73,7 @@ const AdminReg = () => {
       setIsSubmitting(true);
 
       axios
-        .post("http://localhost:3500/admin/register", formData)
+        .post("https://hostel-management-app-azure.vercel.app/admin/register", formData)
         .then((response) => {
           setUser(response.data);
           setIsSubmitting(false);

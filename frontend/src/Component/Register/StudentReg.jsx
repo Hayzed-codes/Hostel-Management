@@ -49,7 +49,7 @@ const StudentReg = () => {
     // setIsSubmitting(true)
 
     axios
-      .post("http://localhost:3500/student/register-student", formData)
+      .post("https://hostel-management-app-azure.vercel.app/student/register-student", formData)
       .then((response) => {
         console.log(response);
         setIsSubmitting(false);

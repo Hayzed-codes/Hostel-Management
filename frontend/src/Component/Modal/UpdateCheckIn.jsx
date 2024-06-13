@@ -11,7 +11,7 @@ const UpdateCheckIn = ({ student, onClose }) => {
       if (student.room) {
         try {
           const response = await axios.get(
-            `http://localhost:3500/room/get-single-room/${student.room}`
+            `https://hostel-management-app-azure.vercel.app/room/get-single-room/${student.room}`
           );
           setCurrentRoomNumber(response.data.roomNumber);
         } catch (error) {
@@ -33,7 +33,7 @@ const UpdateCheckIn = ({ student, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3500/student/check-in-status", {
+      await axios.post("https://hostel-management-app-azure.vercel.app/student/check-in-status", {
         action,
         roomNumber,
         studentId: student._id,
